@@ -1,0 +1,42 @@
+<!-- partial HTML -->
+<div id="ov-sample-custom">
+    <div class="tabular-header">
+        <h2>Packet In Stats ({{tableData.length}} total)</h2>
+        <div class="ctrl-btns">
+            <div class="refresh" ng-class="{active: autoRefresh}"
+                 icon icon-size="36" icon-id="refresh"
+                 tooltip tt-msg="autoRefreshTip"
+                 ng-click="toggleRefresh()"></div>
+        </div>
+    </div>
+
+    <div class="summary-list" onos-fixed-header>
+
+
+        <div class="table-body">
+            <table>
+                <tr>
+                    <th colId="id" sortable>Switch ID </th>
+                    <th colId="src" sortable>Source Address</th>
+                    <th colId="dst" sortable>Destination Address</th>
+                    <th colId="cnt" sortable>Counter</th>
+                </tr>
+                <tr ng-if="!tableData.length" class="no-data ignore-width">
+                    <td colspan="4">
+                        No rules found
+                    </td>
+                </tr>
+
+                <tr ng-repeat="item in tableData track by $index"
+                    ng-repeat-done>
+                    <td>{{item.id}}</td>
+                    <td>{{item.src}}</td>
+                    <td>{{item.dst}}</td>
+                    <td>{{item.cnt}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <ov-sample-table-item-details-panel></ov-sample-table-item-details-panel>
+</div>

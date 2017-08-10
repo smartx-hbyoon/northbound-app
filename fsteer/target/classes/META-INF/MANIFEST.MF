@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1501220512695
+Build-Jdk: 1.8.0_121
+Built-By: netcsnuc
+Bundle-Blueprint: OSGI-INF/blueprint/shell-config.xml
+Bundle-Description: Kafka and flow Steer Application
+Bundle-ManifestVersion: 2
+Bundle-Name: fsteer
+Bundle-SymbolicName: kr.ac.gist.fsteer
+Bundle-Version: 1.7.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.ac.gist.fsteer;uses:="org.onosproject.core,org.onospr
+ oject.net,org.onosproject.net.packet";version="1.7.0",kr.ac.gist.fsteer
+ .cli;uses:="org.apache.karaf.shell.commands,org.onosproject.cli";versio
+ n="1.7.0",kr.ac.gist.fsteer.gui;uses:="org.onosproject.ui";version="1.7
+ .0"
+Import-Package: com.fasterxml.jackson.databind.node;version="[2.4,3)",co
+ m.google.common.collect;version="[19.0,20)",kr.ac.gist.fsteer,org.apach
+ e.karaf.shell.commands;version="[3.0,4)",org.onlab.packet;version="[1.7
+ ,2)",org.onosproject.cli;version="[1.7,2)",org.onosproject.core;version
+ ="[1.7,2)",org.onosproject.net;version="[1.7,2)",org.onosproject.net.fl
+ ow;version="[1.7,2)",org.onosproject.net.packet;version="[1.7,2)",org.o
+ nosproject.ui;version="[1.7,2)",org.onosproject.ui.table;version="[1.7,
+ 2)",org.osgi.service.blueprint;version="[1.0.0,2.0.0)",org.slf4j;versio
+ n="[1.6,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/kr.ac.gist.fsteer.gui.AppUiComponent.xml,OSG
+ I-INF/kr.ac.gist.fsteer.AppComponent.xml
+Tool: Bnd-3.0.0.201509101326
